@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+mkdir -p requirements
+curl https://fireroad-dev.mit.edu/requirements/list_reqs/ | jq --raw-output "keys | .[]" | xargs -I % -n 1 curl https://fireroad-dev.mit.edu/requirements/get_json/%/ -o requirements/%.json
